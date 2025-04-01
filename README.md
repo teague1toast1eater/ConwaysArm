@@ -19,12 +19,18 @@ For this project we will be using Raspberry Pi's running ARM-64 to compile and r
 
 ## (4) Project Timeline and Milestones
 #### **Week 1 April 1st - April 7th:**
+- build the basic structure of the project
+- implement the basic game logic in ARM assembly
 
 #### **Week 2 April 8th - April 14th:**
+- get the game to display the grid and the cells on the console 
+- build several template patterns to test the game logic and be able to swap between them on the fly
 
 #### **Week 3 April 15th - April 21st:**
+- debug and verify the game logic and optimization is working as expected
 
 #### **Project Due Date:** April 22nd, at 11:59 PM
+- Submit the final project and documentation
 
 
 ## (5) Course Concepts Applied
