@@ -34,6 +34,7 @@ For this project we will be using Raspberry Pi's running ARM-64 to compile and r
 
 
 ## (5) Course Concepts Applied
-
+- Memory Allocation and Management: Understanding how to manage memory in ARM assembly, including stack and heap allocation.
+- Control Flow: Implementing loops and conditionals in assembly language to control the game logic.
 
 
