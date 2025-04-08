@@ -21,6 +21,10 @@ For this project we will be using Raspberry Pi's running ARM-64 to compile and r
 #### **Week 1 April 1st - April 7th:**
 - build the basic structure of the project
 - implement the basic game logic in ARM assembly
+##### Delegation 
+- Teague: look into the 2d arrays and memory management in ARM assembly and updating the 2d arrays
+- Mason: figure out how to compile two or more files together
+- Alec: look into how to print to the console in ARM assembly and how to use C libraries for printing
 
 #### **Week 2 April 8th - April 14th:**
 - get the game to display the grid and the cells on the console 
