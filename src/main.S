@@ -10,9 +10,10 @@ row3: .word 0, 1, 1, 0, 1, 0, 1
 game_board: .space 32
 
 .global main
-.extern print_game_board
+.extern print_game_board clear_screen
 .text
 main:
+    bl clear_screen
     bl create_2d_array
     mov x1, #3
     mov x2, #7
