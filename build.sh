@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gcc -o main main.S src/*.S
+gcc -o main src/*.S
 
