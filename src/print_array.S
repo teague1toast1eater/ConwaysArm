@@ -2,6 +2,8 @@
 ultarray: .space 32
 format: .asciz "%d "
 newline: .asciz "\n"
+x_value: .asciz "X"
+blank: .asciz " "
 
 .global print_array
 .extern printf
@@ -33,9 +35,14 @@ print_array:
             str x11, [sp, #-16]!
 
             // print value of multarray[i][j]
-            ldr x0, =format
-            bl printf
-            ldr x11, [sp], #16
+            cmp x1, #1
+            bne skip_x
+            bl print_x
+            skip_x:
+            beq skip
+            bl print_space
+            skip:
+            ldr x11, [sp], #16 // restore the stack
             ldr x10, [sp], #16
             ldr x0, [sp], #16
 
@@ -65,3 +72,16 @@ print_array:
     ldr x21, [sp], #16
     ret
 
+print_x:
+    str x30, [sp, #-16]!
+    ldr x0, =x_value
+    bl printf
+    ldr x30, [sp], #16
+    ret
+
+print_space: 
+    str x30, [sp, #-16]!
+    ldr x0, =blank
+    bl printf
+    ldr x30, [sp], #16
+    ret
