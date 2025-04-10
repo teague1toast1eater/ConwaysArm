@@ -1,16 +1,16 @@
 .data
-ultarray: .space 32
 format: .asciz "%d "
 newline: .asciz "\n"
 x_value: .asciz "X"
 blank: .asciz " "
 
-.global print_array
+.global print_game_board
 .extern printf
 .text
 
-
-print_array:
+// takes a 2D array of 0s and 1s and prints it to the screen as " " and "X"
+// Parameters: x0 == array to be printed, x1 == array height, x2 == arr width
+print_game_board:
     // x0 == 2darray
     // x1 == parent array length
     // x2 == child array length 
@@ -35,11 +35,11 @@ print_array:
             str x11, [sp, #-16]!
 
             // print value of multarray[i][j]
-            cmp x1, #1
-            bne skip_x
+            cmp x1, #1      // 2dArray[i][j] == 1
+            bne skip_x      
             bl print_x
             skip_x:
-            beq skip
+            beq skip        // comparison persists across function calls
             bl print_space
             skip:
             ldr x11, [sp], #16 // restore the stack

@@ -2,7 +2,6 @@
 // use registers x0-x18 to handle arguments in order
 // try to keep main game loop here, put extra functions in seperate files
 // explain function usage either here or in a function.md file
-// function usage: print_array, arg1 = array to be printed, arg2 = arr_height, arg3 = arr_width
 
 .data
 row1: .word 0, 1, 0, 1, 0, 0, 0
@@ -11,13 +10,13 @@ row3: .word 0, 1, 1, 0, 1, 0, 1
 game_board: .space 32
 
 .global main
-.extern print_array
+.extern print_game_board
 .text
 main:
     bl create_2d_array
     mov x1, #3
     mov x2, #7
-    bl print_array
+    bl print_game_board
     b exit
 
 
