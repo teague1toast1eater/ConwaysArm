@@ -9,7 +9,8 @@ which means they must be the same both before and after the function call
 
 if you are making a function that is relient on other function understand the functions like printf and scanf will use the sane guilines about registers stated earlier so understand that calling one of those functions will likely alter the 
 values of registers x1-x18 so if you are calling a function be sure to store any sate you need to persist after the call in these registers on the stack and then restore it after the function call. If you are making a function 
-that calls other function be sure to maintain the link register by storing it on the stack at the beginning of the function and retoring it after so that the nested function calls do not ruin the link register return location 
+that calls other function be sure to maintain the link register by storing it on the stack at the beginning of the function and retoring it after so that the nested function calls do not ruin the link register return location. you can see
+how this is implemented in the clear screen and print game board functions
 
 ## the stack 
 
