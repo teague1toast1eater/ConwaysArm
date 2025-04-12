@@ -8,7 +8,7 @@
 // cursor back to the top left corner
 
 .data
-    ansii_code: .asciz "\x1b[2J\x1b[0;0H" 
+    ansii_code: .asciz "\033[2J\033[H" 
 
 .extern printf
 .global clear_screen

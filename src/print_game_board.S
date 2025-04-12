@@ -1,5 +1,4 @@
 .data
-format: .asciz "%d "
 newline: .asciz "\n"
 x_value: .asciz "X"
 blank: .asciz " "
@@ -25,7 +24,7 @@ print_game_board:
         mov x11, #0         //j = 0
         lowerloop:
             lsl x3, x10, #3    //i offset 
-            lsl x4, x11, #2    //j offset
+            lsl x4, x11, #3    //j offset
             ldr x5, [x0, x3] // multarray[i]
             ldr x1, [x5, x4] // multarray[i][j]
 
