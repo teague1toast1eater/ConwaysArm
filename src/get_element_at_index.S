@@ -29,7 +29,10 @@ get_element_at_index:
     bge return_zero
     cmp x2, x4
     bge return_zero
-
+    cmp x1, #0
+    blt return_zero
+    cmp x2, #0
+    blt return_zero
 
 
     lsl x3, x1, #3 // calculate i offset, i == i * 8
