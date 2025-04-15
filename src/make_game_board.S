@@ -25,6 +25,8 @@ create_game_board:
     mov x20, x1 // x20 == arr height
     mov x21, x2 // x21 == arr width
     mov x22, #0 // i == 0
+
+    // populate arr in x0
     upperloop:
         lsl x0, x21, #3 //multiply by 8
         bl malloc // allocate width * 8 bytes
@@ -32,7 +34,7 @@ create_game_board:
         mov x23, #0 // j == 0
         lowerloop:
             lsl x0, x23, #3 // j offset
-            mov x1, #1
+            mov x1, #1  // change this to 0 to make it create an array of 0s
             str x1, [x24, x0] //set arr[i][j] to 1
             add x23, x23, #1 // j++
             cmp x23, x21
@@ -43,6 +45,8 @@ create_game_board:
         cmp x22, x20 // if i < arr height
         blt upperloop
     mov x0, x19 // return the array
+
+
     //restore stack
     ldr x24, [sp], #16
     ldr x23, [sp], #16
