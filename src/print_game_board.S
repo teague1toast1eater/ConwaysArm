@@ -67,8 +67,8 @@ print_game_board:
         cmp x10, x20       // i < array height
         blt upperloop
     ldr x30, [sp], #16
-    ldr x20, [sp], #16
     ldr x21, [sp], #16
+    ldr x20, [sp], #16
     ret
 
 print_x:

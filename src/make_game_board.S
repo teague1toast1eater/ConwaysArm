@@ -5,7 +5,9 @@
 
 
 .global create_game_board
+.global armalloc
 
+.text
 create_game_board:
     // x0 == arr
     // x1 == arr height
@@ -29,12 +31,12 @@ create_game_board:
     // populate arr in x0
     upperloop:
         lsl x0, x21, #3 //multiply by 8
-        bl malloc // allocate width * 8 bytes
+        bl armalloc // allocate width * 8 bytes
         mov x24, x0 // x24 == arr[i]
         mov x23, #0 // j == 0
         lowerloop:
             lsl x0, x23, #3 // j offset
-            mov x1, #1  // change this to 0 to make it create an array of 0s
+            mov x1, #0  // change this to 0 to make it create an array of 0s
             str x1, [x24, x0] //set arr[i][j] to 1
             add x23, x23, #1 // j++
             cmp x23, x21
@@ -59,7 +61,7 @@ create_game_board:
     ldr x30, [sp], #16 // restore link register
     ret
 
-malloc:
+armalloc:
     str x30, [sp, #-16]!
     str x29, [sp, #-16]!
     mov x29, sp

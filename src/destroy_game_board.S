@@ -1,5 +1,6 @@
 
 .global destroy_game_board
+.global arfree
 .extern get_board_dimensions
 .text
 destroy_game_board:
@@ -22,7 +23,7 @@ destroy_game_board:
         ldr x4, [x19, x3] // get game_board[i] pointer
         mov x0, x4 // set pointer to be freed
         lsl x1, x21, #3 // calculate byte size
-        bl free
+        bl arfree
         
         add x22, x22, #1 // i++
         cmp x22, x21     // i < board width
@@ -35,7 +36,7 @@ destroy_game_board:
     ldr x30, [sp], #16
     ret
 
-free:
+arfree:
     // x0 == pointer to be freed
     // x1 == byte size to be freed
     
