@@ -1,4 +1,4 @@
-// copyright: 2025: Mason England, Alec Stoeger, teague beauchamp
+// copyright: 2025: Mason England, Alec Stoeger, Teague Beauchamp
 // use registers x0-x18 to handle arguments in order
 // try to keep main game loop here, put extra functions in seperate files
 // explain function usage either here or in a function.md file
